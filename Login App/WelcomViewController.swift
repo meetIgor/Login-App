@@ -11,7 +11,6 @@ class WelcomViewController: UIViewController {
     
     //MARK: - IB Outlets
     @IBOutlet weak var welcomLabel: UILabel!
-    @IBOutlet weak var welcomStickerLabel: UILabel!
     
     //MARK: - Public Properties
     var userName: String!
@@ -25,20 +24,14 @@ class WelcomViewController: UIViewController {
         super.viewDidLoad()
         addGradientWithColor(from: startColor, to: endColor)
         welcomLabel.text = "Welcom, " + userName
-        welcomStickerLabel.text = "👋"
-    }
-    
-    //MARK: - IB Actions
-    @IBAction func logoutButtonTapped() {
-        dismiss(animated: true)
     }
     
     //MARK: - Private Methods
     private func addGradientWithColor(from startColor: UIColor, to endColor: UIColor) {
         let gradient = CAGradientLayer()
-        gradient.frame = self.view.bounds
+        gradient.frame = view.bounds
         gradient.colors = [startColor.cgColor, endColor.cgColor]
-        self.view.layer.insertSublayer(gradient, at: 0)
+        view.layer.insertSublayer(gradient, at: 0)
     }
     
 }

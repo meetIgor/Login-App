@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     //MARK: - Life Cycles Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     //MARK: - Navigation
@@ -41,7 +41,6 @@ class ViewController: UIViewController {
                 with: "Invalid login or password",
                 and: "Please, enter correct login and password"
             )
-            passwordLabel.text = ""
         }
     }
     
@@ -59,7 +58,9 @@ class ViewController: UIViewController {
 extension ViewController {
     private func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordLabel.text = ""
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
