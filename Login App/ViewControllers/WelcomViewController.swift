@@ -16,14 +16,15 @@ class WelcomViewController: UIViewController {
     var userName: String!
     
     //MARK: - Private Properties
-    let startColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-    let endColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+    private let startColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+    private let endColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    
     
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         addGradientWithColor(from: startColor, to: endColor)
-        welcomLabel.text = "Welcom, " + userName
+        welcomLabel.text = "Welcom,\n" + userName
     }
     
     //MARK: - Private Methods
