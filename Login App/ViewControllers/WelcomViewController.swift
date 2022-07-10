@@ -13,18 +13,13 @@ class WelcomViewController: UIViewController {
     @IBOutlet weak var welcomLabel: UILabel!
     
     //MARK: - Public Properties
-    var userName: String!
-    
-    //MARK: - Private Properties
-    private let startColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-    private let endColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-    
+    var user: User!
     
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        addGradientWithColor(from: startColor, to: endColor)
-        welcomLabel.text = "Welcom,\n" + userName
+        view.addGradientWithColor()
+        welcomLabel.text = "Welcom,\n" + user.personInfo.fullnName
     }
     
     //MARK: - Private Methods

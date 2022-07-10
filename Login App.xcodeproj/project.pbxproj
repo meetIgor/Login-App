@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1BBEDD287AC1630036199A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1BBEDC287AC1630036199A /* TabBarController.swift */; };
+		AD1BBEE0287AC5ED0036199A /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1BBEDF287AC5ED0036199A /* Extension + UIView.swift */; };
 		ADD74235287472CC00A23124 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD74234287472CC00A23124 /* UserViewController.swift */; };
 		ADD7423C287492F100A23124 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD7423B287492F100A23124 /* User.swift */; };
 		ADD7423E2875BE1800A23124 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD7423D2875BE1800A23124 /* InfoViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD1BBEDC287AC1630036199A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AD1BBEDF287AC5ED0036199A /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		ADD74234287472CC00A23124 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		ADD7423B287492F100A23124 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADD7423D2875BE1800A23124 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD1BBEDE287AC57B0036199A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD1BBEDF287AC5ED0036199A /* Extension + UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ADD7423628748DDF00A23124 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +74,7 @@
 				ADDF8981286F24CD00741A9F /* WelcomViewController.swift */,
 				ADD74234287472CC00A23124 /* UserViewController.swift */,
 				ADD7423D2875BE1800A23124 /* InfoViewController.swift */,
+				AD1BBEDC287AC1630036199A /* TabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -110,6 +123,7 @@
 		ADDF896C286F0DA900741A9F /* Login App */ = {
 			isa = PBXGroup;
 			children = (
+				AD1BBEDE287AC57B0036199A /* Extensions */,
 				ADD7423A2874906300A23124 /* Models */,
 				ADD7423728748F1400A23124 /* ViewControllers */,
 				ADD7423828748F4F00A23124 /* Storyboards */,
@@ -191,9 +205,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADDF8982286F24CD00741A9F /* WelcomViewController.swift in Sources */,
+				AD1BBEDD287AC1630036199A /* TabBarController.swift in Sources */,
 				ADD74235287472CC00A23124 /* UserViewController.swift in Sources */,
 				ADD7423C287492F100A23124 /* User.swift in Sources */,
 				ADD7423E2875BE1800A23124 /* InfoViewController.swift in Sources */,
+				AD1BBEE0287AC5ED0036199A /* Extension + UIView.swift in Sources */,
 				ADDF8972286F0DA900741A9F /* LoginViewController.swift in Sources */,
 				ADDF896E286F0DA900741A9F /* AppDelegate.swift in Sources */,
 				ADDF8970286F0DA900741A9F /* SceneDelegate.swift in Sources */,

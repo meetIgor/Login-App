@@ -17,9 +17,16 @@ class LoginViewController: UIViewController {
     private let user = User.getUser()
     
     //MARK: - Life Cycles Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userNameTextField.text = user.login
+        passwordTextField.text = user.password
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+
     }
     
     //MARK: - Navigation
@@ -27,20 +34,14 @@ class LoginViewController: UIViewController {
         guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarVC.viewControllers else { return }
         
-        viewControllers.forEach { viewController in
-            if let welcomVC = viewController as? WelcomViewController {
-                welcomVC.userName = user.username
-            } else if let navController = viewController as? UINavigationController {
-                
-                guard let userVC = navController.topViewController as? UserViewController else { return }
-                userVC.username = user.username
-                userVC.image = user.personInfo.image
-                userVC.name = user.personInfo.name
-                userVC.surname = user.personInfo.surname
-                userVC.age = user.personInfo.age
-                userVC.instagram = user.personInfo.instagram
-                userVC.hobbies = user.personInfo.hobbies.map { $0.rawValue }
-                
+        viewControllers.forEach {
+            if let welcomVC = $0 as? WelcomViewController {
+                welcomVC.user = user
+            } else if let navController = $0 as? UINavigationController {
+                guard
+                    let userVC = navController.topViewController as? UserViewController
+                else { return }
+                userVC.user = user
             }
             
         }
@@ -53,7 +54,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - IB Actions
     @IBAction func loginButtonTapped() {
-        guard userNameTextField.text == user.username, passwordTextField.text == user.password else {
+        guard userNameTextField.text == user.login, passwordTextField.text == user.password else {
             showAlert(
                 with: "Invalid login or password",
                 and: "Please, enter correct login and password",
@@ -65,7 +66,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func remindNameButtonTapped() {
-        showAlert(with: "Oops!", and: "Your name is \(user.username) 😉")
+        showAlert(with: "Oops!", and: "Your name is \(user.login) 😉")
     }
     
     @IBAction func remindPasswordButtonTapped() {

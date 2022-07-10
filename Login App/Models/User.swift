@@ -6,22 +6,15 @@
 //
 
 struct User {
-    let username: String
+    let login: String
     let password: String
     let personInfo: Person
     
     static func getUser() -> User {
         User(
-            username: "meet.igor",
+            login: "meet.igor",
             password: "mypass",
-            personInfo: Person(
-                name: "Igor",
-                surname: "Popov",
-                age: 32,
-                image: "avatar",
-                instagram: "@meet.igor",
-                hobbies: [.running, .yoga, .programming, .mobilephoto]
-            )
+            personInfo: Person.getPerson()
         )
     }
 }
@@ -33,6 +26,21 @@ struct Person {
     let image: String
     let instagram: String
     let hobbies: [HobbyType]
+    
+    var fullnName: String {
+        "\(name) \(surname)"
+    }
+    
+    static func getPerson() -> Person {
+        Person(
+            name: "Igor",
+            surname: "Popov",
+            age: 32,
+            image: "avatar",
+            instagram: "@meet.igor",
+            hobbies: [.running, .yoga, .programming, .mobilephoto]
+        )
+    }
 }
 
 enum HobbyType: String {
